@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sushi Delight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Reset some default styles and set a background color */
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0; /* Pastel background color */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #ffc3a0; /* Pastel orange */
+            color: #fff; /* White text color */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        /* Logo animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .logo-animation {
+            animation: fadeIn 5s ease-in 3s;
+        }
+
+        /* Rest of your styles */
+
+        h2 {
+            background-color: #ffc3a0; /* Pastel orange */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* White form background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #ffc3a0; /* Pastel orange */
+            color: #fff; /* White text color */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        /* Menu styles */
+        #menu {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .sushi-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s; /* Add a smooth hover effect */
+        }
+
+        .sushi-item:hover {
+            transform: scale(1.05); /* Enlarge on hover */
+        }
+
+        .sushi-item h3 {
+            color: #ffc3a0; /* Pastel orange */
+            font-size: 1.5rem;
+        }
+
+        .sushi-item p {
+            color: #333;
+        }
+
+        .sushi-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Cart styles */
+        #cart {
+            background-color: #ffc3a0; /* Pastel orange */
+            color: #fff; /* White text color */
+            padding: 20px;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart-items li {
+            margin: 10px 0;
+        }
+
+        #total-price {
+            font-size: 1.2rem;
+            text-align: right;
+        }
+
+        /* Hyperlinks */
+        a {
+            text-decoration: none;
+            color: #ffc3a0; /* Pastel orange */
+            font-weight: bold;
+        }
+
+        .marquee {
+            color: white;
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border: 1px solid orange;
+            padding: 10px 0;
+        }
+
+        footer {
+            background-color: #ffc3a0;
+            color: white;
+            padding: 20px 0;
+        }
+
+        /* About Us and Contact Styles */
+        .about-contact {
+            display: flex;
+            margin: 20px;
+        }
+
+        .about-contact .about, .about-contact .contact {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+       
+    /* Your existing CSS styles */
+    
+    /* Add a new CSS rule to align titles horizontally */
+    
+    .product-title, .about-title, .contact-title {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+
+        .logo-title {
+            font-size: 1.5rem;
+            animation: colorChange 5s infinite; /* Continuous color change */
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #ff0000; /* Starting color (red) */
+            }
+            25% {
+                color: #00ff00; /* Green */
+            }
+            50% {
+                color: #0000ff; /* Blue */
+            }
+            75% {
+                color: #ff00ff; /* Magenta */
+            }
+            100% {
+                color: #ff0000; /* Back to red */
+            }
+        }
+
+        /* Bouncing animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px); /* Adjust the bounce height as needed */
+            }
+        }
+
+    /* Your existing CSS styles */
+
+    /* Animation for the California Roll image */
+    .california-roll-img {
+        animation: spin 2s linear 2;
+    }
+
+    /* Animation for the Salmon Nigiri image */
+    .salmon-nigiri-img {
+        animation: spin 2s linear 2;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+@keyframes shrinkImage {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0.8);
+            }
+        }
+
+        .shrink-on-click {
+            animation: shrinkImage 0.3s ease-in-out;
+        }
+
+        /* Apply the animation to the logo image */
+        .logo-image {
+            animation: bounce 2s ease-in-out infinite; /* You can adjust the duration and timing function */
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span 
+        class="logo-animation"> Sushi Serenity</span></h1>
+        <p class="logo-title">Welcome to Sushi Serenity</p> <!-- Added title here -->
+       <img src="content://com.android.providers.media.documents/document/image%3A171143"" class="logo-image" alt="" width="300" height="200">
+        
+        <div class="product-title">
+        <a href="#menu">Our Menu</a>
+        <h2>Our Menu</h2>
+    </div>
+    
+    <div class="about-title">
+        <a href="#about">About Us</a>
+        <h2>About Us</h2>
+    </div>
+    
+    <div class="contact-title">
+        <a href="#contact">Contact Us</a>
+        <h2>Contact</h2>
+    </div>
+        
+    </header>
+    
+    <h2>Login</h2>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+
+<h2 id="menu">Menu</h2>
+   
+    <div id="menu">
+        <div class="sushi-item">
+            <a href="california_roll.html">
+                <img src="content://com.android.providers.media.documents/document/image%3A171141" class="california-roll-img" alt"="">
+                <h3>California Roll</h3>
+            </a>
+            <p>A classic roll with avocado, crab, and cucumber.</p>
+            <p>Price: $9.99</p>
+            <button onclick="addToCart('California Roll', 9.99)">Add to Cart</button>
+        </div>
+        
+        <div class="sushi-item">
+            <a href="salmon_nigiri.html">
+                <img src="content://com.android.providers.media.documents/document/image%3A171142" class="salmon-nigiri-img" alt="">
+                <h3>Salmon Nigiri</h3>
+            </a>
+            <p>Fresh salmon on beds of seasoned rice.</p>
+            <p>Price: $6.99 (2 pieces)</p>
+            <button onclick="addToCart('Salmon Nigiri', 6.99)">Add to Cart</button>
+        </div>
+
+        <!-- Add more sushi items here with hyperlinks -->
+    </div>
+
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p id="total-price">Total Price: $0.00</p>
+    </div>
+
+    <div class="marquee">
+        <marquee behavior="scroll" direction="left">ORDER NOW!</marquee>
+    </div>
+
+<div class="about-contact">
+        <div class="about">
+            <h2 id="about">About Us</h2>
+            <p>We are Sushi Delight, a family-owned sushi restaurant. Our mission is to provide the finest sushi experience with fresh ingredients and exceptional service.</p>
+        </div>
+  
+        <div class="contact">
+        <h2 id="contact">Contact Us</h2>
+            
+            <p>If you have any questions or need assistance, feel free to contact us:</p>
+            <p>Email: <a href="mailto:info@sushidelight.com">info@sushidelight.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Sushi Delight</p>
+    </footer>
+
+    <!-- Your existing content including login, menu, and other sections -->
+
+    <script>
+        let cart = [];
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            updateCartDisplay();
+        }
+
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById("cart-items");
+            const totalPrice = document.getElementById("total-price");
+            let cartHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                cartHTML += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+                total += item.price;
+            });
+            cartItems.innerHTML = cartHTML;
+            totalPrice.innerHTML = `Total Price: $${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
